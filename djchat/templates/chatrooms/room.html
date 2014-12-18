@@ -1,0 +1,36 @@
+{% extends "chatrooms/base.html" %}
+
+{% block extra_headers %}
+    <!-- <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/css/room_page.css"> -->
+    <script type="text/javascript">
+        getContext = function(){
+            return {
+                "username": "{{ user.username }}",
+                "room_id": {{ room.id }},
+            }
+        }
+    </script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/room.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.qqFace.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/room.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style/room.css">
+{% endblock %}
+
+
+{% block content %}
+    <div id="chatContent">
+        <div id="chat">
+            <div id="chatText"></div>
+            <div><span class="emotion"></span></div>
+            <div id="chatInput">
+                <input id="chatSendText" name="chatSendText" type="text" class="form-control">
+                <input id="chatSendButton" type="button" value="Send" class="btn btn-primary sub_btn">
+            </div>
+        </div>
+        <div id="connectedUsers">
+            <p id="connectedUsersTitle">Connected users</p>
+            <ol id="connectedUsersList">
+            </ol>
+        </div>
+    </div>
+{% endblock %}
