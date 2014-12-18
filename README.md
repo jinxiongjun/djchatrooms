@@ -1,0 +1,4 @@
+djchatrooms
+===========
+
+Django chat room
