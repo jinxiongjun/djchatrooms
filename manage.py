@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#how to load module
 import os
 import sys
 
